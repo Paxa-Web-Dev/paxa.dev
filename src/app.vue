@@ -27,6 +27,16 @@ import Icon from '@/components/icon.vue'
             <Icon name="github" />
           </a>
         </span>
+        <span>
+          <a href="https://wa.me/5567998552020" target="_blank">
+            <Icon name="whatsapp" />
+          </a>
+        </span>
+        <span>
+          <a href="mailto:paxa@paxa.dev">
+            <Icon name="email" />
+          </a>
+        </span>
       </p>
     </div>
   </div>

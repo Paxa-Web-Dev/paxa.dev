@@ -1,4 +1,5 @@
 @import 'fonts';
+// @import 'links';
 
 :root {
   font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,18 +18,19 @@
 
 body,
 html {
-	height: 100%;
   background: #242424;
   background: radial-gradient(at left top, #45352d, #242424);
 }
 
 h1 {
+	font-family: 'Nunito Bold', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	font-size: 28px;
-  letter-spacing: 2.2rem;
+  letter-spacing: 2.65rem;
 	text-transform: uppercase;
 	color: #eeeeee;
   text-align: center;
-  margin: 1rem 0 .1rem 2.2rem;
+  margin: .92rem 0 -.5rem 2.65rem;
+	padding: 0;
   font-weight: bold;
 }
 
@@ -39,6 +41,7 @@ h2 {
   text-align: center;
   text-transform: lowercase;
   margin: 0 0 0 .2rem;
+	padding: 0;
 }
 
 p:nth-of-type(0) {
@@ -48,10 +51,9 @@ p:nth-of-type(0) {
 }
 
 span a {
-	font-size: 18px;
-	color: #cccccc;
+	color: #a39f96;
 	text-decoration: none;
-	margin: 0 10px;
+	margin: 0 8px;
 	transition: all 0.4s ease-in-out;
 	&:hover {
 		color: #ffffff;
@@ -94,8 +96,8 @@ span a {
 	animation: float 6s ease-in-out infinite;
 	img { 
     width: auto; 
-    height: 180px; 
-    padding-left: 10px;
+    height: 160px; 
+    padding: 8px 0 0 16px;
   }
 }
 
