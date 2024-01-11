@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import Icon from '@/components/icon.vue'
+import Icon from "@/components/icon.vue";
+// import Dialog from "@/components/dialog.vue";
 </script>
 <template>
+  <!-- <Teleport to="body"> -->
+    <dialog open>
+      <form method="dialog">
+        <button>Fechar</button>
+      </form>
+      <p>Estamos em construção</p>
+    </dialog>
+  <!-- </Teleport> -->
   <div class="container">
     <div class="avatar">
       <a href="#">
@@ -41,3 +50,15 @@ import Icon from '@/components/icon.vue'
     </div>
   </div>
 </template>
+<style>
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
+}
+</style>
