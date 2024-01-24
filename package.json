@@ -1,15 +1,17 @@
 {
   "name": "paxa.dev",
+  "author": "Paxá <paxa@paxa.dev> (https://paxa.dev)",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",    
+    "dev": "bunx --bun vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.11"
+    "vue": "^3.3.11",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@types/node": "^20.10.7",

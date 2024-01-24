@@ -1,19 +1,23 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Icon from "@/components/icon.vue";
-// import Dialog from "@/components/dialog.vue";
+
+const dialog = ref(null);
+
+function openDialog() {
+  dialog.value.showModal();
+}
 </script>
 <template>
-  <!-- <Teleport to="body"> -->
-    <dialog open>
-      <form method="dialog">
-        <button>Fechar</button>
-      </form>
-      <p>Estamos em construção</p>
-    </dialog>
-  <!-- </Teleport> -->
+  <dialog ref="dialog">
+    <p>Estamos em construção!</p>
+    <form method="dialog">
+      <button class="button-three" aria-label="close">Fechar</button>
+    </form>
+  </dialog>
   <div class="container">
     <div class="avatar">
-      <a href="#">
+      <a href="#" @click="openDialog">
         <img src="/img/pasha.png" alt="Paxá" />
       </a>
     </div>
@@ -50,15 +54,3 @@ import Icon from "@/components/icon.vue";
     </div>
   </div>
 </template>
-<style>
-::backdrop {
-  background-image: linear-gradient(
-    45deg,
-    magenta,
-    rebeccapurple,
-    dodgerblue,
-    green
-  );
-  opacity: 0.75;
-}
-</style>
