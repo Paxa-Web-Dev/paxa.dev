@@ -2,7 +2,6 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
 
 // import updateLocale from 'dayjs/plugin/updateLocale'
-
 // dayjs.extend(updateLocale)
 
 // dayjs.updateLocale('en', {
@@ -22,7 +21,6 @@ import 'dayjs/locale/pt-br'
 //     yy: "%d years"
 //   }
 // })
-
 
 export function formatDate(d: string | Date, onlyDate = true) {
   const date = dayjs(d).locale('pt-br')

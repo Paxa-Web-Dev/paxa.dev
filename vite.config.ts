@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import router from 'unplugin-vue-router/vite'
-import layouts from 'vite-plugin-vue-layouts';
+import pages from 'vite-plugin-pages'
+import layouts from 'vite-plugin-vue-layouts'
 import markdown from 'unplugin-vue-markdown/vite'
-import { resolve, join } from 'node:path'
+import components from 'unplugin-vue-components/vite'
+import { resolve } from 'node:path'
 import { readFileSync } from 'fs-extra'
 import matter from 'gray-matter'
-
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,24 +17,29 @@ export default defineConfig({
     },
   },
   plugins: [
-    router({
-      extensions: ['.vue', '.md'],  
+    pages({
+      extensions: ['vue', 'md'],
       extendRoute(route) {
-        console.log(route.meta)
+        const path = resolve(__dirname, route.component.slice(1))
 
-        if (route.path === '/posts') {
-          route.meta = { frontmatter: { title: 'Test' }}
+        if (!path.includes('projects.md') && path.endsWith('.md')) {
+          const md = readFileSync(path, 'utf-8')
+          const { data } = matter(md)
+          route.meta = Object.assign(route.meta || {}, { frontmatter: data })
         }
 
-        if (route.name === '/[name]') {
-          route.addAlias('/hello-vite-:name')
-        }
-      }
-    }), 
+        return route
+      },
+    }),
     vue({
-      include: [/\.vue$/, /\.md$/] // <-- allows Vue to compile Markdown files
+      include: [/\.vue$/, /\.md$/]
     }),
     layouts(),
-    markdown({})
-  ],
+    markdown({}),
+    components({
+      extensions: ['vue', 'md'],
+      dts: true,
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+    })
+  ]
 })

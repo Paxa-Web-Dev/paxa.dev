@@ -2,9 +2,9 @@ export interface Post {
   path: string
   title: string
   date: string
+  place?: string
   lang?: string
   desc?: string
-  platform?: string
   duration?: string
   recording?: string
   radio?: boolean

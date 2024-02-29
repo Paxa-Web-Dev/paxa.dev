@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: A Great Vim Cheat Sheet
-date: 2021-07-14T16:00:00Z
+date: 2022-07-14T16:00:00Z
 lang: en
 duration: 1min
 type: note
