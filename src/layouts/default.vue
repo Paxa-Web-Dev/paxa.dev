@@ -3,7 +3,7 @@
     <slot />
   </div>
 </template>
-<style scoped>
+<style>
 div {
   width: 100%;
   height: 100%;
