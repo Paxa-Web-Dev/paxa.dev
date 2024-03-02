@@ -22,9 +22,13 @@ const router = createRouter({
 })
 
 // host = window.location.host; subdomain = host.split(".")[0];
-router.beforeEach((_to, _from, next) => {
+router.beforeEach((to, _from, next) => {
   if (window.location.host === "blog.paxa.dev") {
-    next("/posts")
+    if (!to.path.startsWith('/posts')) {
+      next('/posts')
+    } else {
+      next()
+    }
   } else {
     next()
   }
