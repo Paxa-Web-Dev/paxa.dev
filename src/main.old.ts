@@ -5,14 +5,10 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import App from '@/app.vue'
 import autoRoutes from 'pages-generated'
 
-let modifiedRoute
-const isBlog = window.location.hostname === 'blog.paxa.dev'
 const layoutRoutes = setupLayouts(autoRoutes)
 
-const routes = setupLayouts(layoutRoutes).map((route) => {  
-  modifiedRoute = { ...route, alias: route.path.endsWith("/") ? `${route.path}index.html` : `${route.path}.html` }
-  if (isBlog && route.path === "/") modifiedRoute = { ...modifiedRoute, alias: '/posts' }
-  return modifiedRoute
+const routes = layoutRoutes.map((i) => {
+  return { ...i, alias: i.path.endsWith("/") ? `${i.path}index.html` : `${i.path}.html` }
 })
 
 const router = createRouter({
