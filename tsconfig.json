@@ -18,16 +18,17 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": false,
-
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["./*"]
     },
-
-    "types": ["vite-plugin-vue-layouts/client"]
+    "types": [
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client"
+    ],
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "logics/**/*.ts", "pages/**/*.vue", "typed-router.d.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist"]
 }
