@@ -5,7 +5,7 @@ import Icon from '@/components/icon.vue'
   <div>
     <div class="avatar">
       <router-link to="/posts">
-        <img src="/img/pasha.png" alt="Paxá" />
+        <img src="/img/pasha.webp" alt="Paxá" />
       </router-link>
     </div>
     <div class="content">

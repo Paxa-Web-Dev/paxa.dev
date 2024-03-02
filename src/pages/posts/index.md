@@ -1,6 +1,0 @@
----
-title: Blog
-display: ''
----
-
-<Blog />
