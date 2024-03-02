@@ -1,11 +1,5 @@
 <template>
-  <div>
-    <slot />
+  <div class="default">
+    <RouterView />
   </div>
 </template>
-<style>
-div {
-  width: 100%;
-  height: 100%;
-}
-</style>
