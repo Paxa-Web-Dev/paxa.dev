@@ -1,0 +1,25 @@
+html,
+body,
+#app,
+.default,
+.welcome,
+.blog {
+  height: 100%;
+  margin: 0;
+}
+
+.default > div, .welcome > div, .blog > div,
+.default > main, .welcome > main, .blog > main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.centered {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
