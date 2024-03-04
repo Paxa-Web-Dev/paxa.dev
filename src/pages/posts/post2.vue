@@ -1,3 +1,3 @@
 <template>
-  <h1>Error 404</h1>
+  <h1>Post 2</h1>
 </template>

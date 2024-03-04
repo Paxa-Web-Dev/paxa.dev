@@ -2,21 +2,11 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "bun:dev",
+			"detail": "bunx --bun vite",
 			"type": "bun",
 			"script": "dev",
-			"label": "bun: dev",
-			"detail": "bun run dev - package.json",
-			"runOptions": {
-				"runOn": "folderOpen"
-			},
-			"presentation": {
-				"echo": false,
-				"reveal": "never",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": false,
-				"clear": true
-			}
+			"problemMatcher": []
 		}
 	]
 }
